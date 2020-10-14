@@ -581,3 +581,5 @@ vote.vote++
   }
   
 }
+
+module.exports = Client
