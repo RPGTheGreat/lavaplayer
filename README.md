@@ -34,7 +34,7 @@ music.play(message, "Im on my way") // bot join the voice channel and play song
 client.login("token")
 ```
 
-# Futures
+# Features
 
 **Best quality music**
 
