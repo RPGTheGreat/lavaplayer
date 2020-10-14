@@ -1,0 +1,38 @@
+{
+  "name": "lavaplayer",
+  "version": "1.0.0",
+  "description": "A very high quality package give you quality like Rythm, Groovy",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RPGTheGreat/lavaplayer"
+  },
+  "keywords": [
+    "music",
+    "lava",
+    "quality"
+  ],
+  "engines": {
+    "node": "12.x"
+  },
+  "author": "RPGTheGreat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RPGTheGreat/lavaplayer/issues"
+  },
+  "homepage": "https://github.com/RPGTheGreat/lavaplayer#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "ytdl-core": "^3.2.2",
+    "ytdl-core-discord": "^1.2.3",
+    "@discordjs/opus": "^0.3.2",
+    "genius-lyrics": "^3.0.0",
+    "moment": "^2.27.0",
+    "ms": "^2.1.2",
+    "simple-youtube-api": "https://github.com/RPGTheGreat/simple-youtube-api"
+  }
+}
