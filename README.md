@@ -12,9 +12,14 @@
 
 **Message is a object of every funcition so message is required**
 
+# Install
+
+`npm i lavaplayer`
+
 # Example
 
-```
+```js
+
 const bot = require("lavaplayer") // required module
 const Discord = require("discord.js")
 const client = new Discord.Client()
@@ -27,7 +32,6 @@ music.play(message, "Im on my way") // bot join the voice channel and play song
 }
 
 client.login("token")
-
 ```
 
 # Futures
