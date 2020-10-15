@@ -10,7 +10,7 @@
 
 # Disclaimer 
 
-**Message is a object of every funcition so message is required**
+**Message is a object of every function so message is required**
 
 # Install
 
@@ -23,7 +23,7 @@
 const bot = require("lavaplayer") // required module
 const Discord = require("discord.js")
 const client = new Discord.Client()
-const music = new bot.Client("yt-api-key")
+const music = new bot.Client("yt-api-key") //you're yt api key
 
 client.on("message", async message => {
 
