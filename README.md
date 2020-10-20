@@ -28,7 +28,7 @@ const music = new bot.Client("yt-api-key") //you're yt api key
 client.on("message", async message => {
 
 if(message.content === "!play") {
-music.play(message, "Im on my way") // bot join the voice channel and play song 
+await music.play(message, "Im on my way") // bot join the voice channel and play song 
 }
 
 client.login("token")
