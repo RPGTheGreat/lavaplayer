@@ -30,7 +30,7 @@ client.on("message", async message => {
 if(message.content === "!play") {
 await music.play(message, "Im on my way") // bot join the voice channel and play song 
 }
-
+});
 client.login("token")
 ```
 
