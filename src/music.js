@@ -14,14 +14,14 @@ const { play } = require("../system/music.js");
   
 class Client {
   
-  async join(message) {
+  join: async function (message) {
   
   await message.member.voice.channel.join()
     return message.channel.send("Successfully joined")
 
 }
 
-  async play(message, songx) {
+   play: async function(message, songx) {
     
     const embed = new MessageEmbed()
     .setColor(COLOR)
@@ -158,7 +158,7 @@ class Client {
     
   }
   
-  async drop(message, number) {
+  drop: async function(message, number) {
     
     const embed = new MessageEmbed()
     .setColor(COLOR)
@@ -195,7 +195,7 @@ class Client {
     
   }
   
-  async jump(message, number) {
+  jump: async function(message, number) {
     
     let embed = new MessageEmbed()
     .setColor(COLOR)
@@ -244,7 +244,7 @@ class Client {
     
   }
   
-  async loop(message) {
+  loop: async function(message) {
     
     let embed = new MessageEmbed()
 .setColor(COLOR);
@@ -274,7 +274,7 @@ class Client {
     
   }
   
-  async lyrics(message, song) {
+  lyrics: async function(message, song) {
     
     const Genius = new (require("genius-lyrics")).Client("ZD_lLHBwRlRRfQvVLAnHKHksDHQv9W1wm1ZAByPaYo1o2NuAw6v9USBUI1vEssjq")
     
@@ -323,7 +323,7 @@ class Client {
     
   }
   
-  async np(message) {
+  np: async function(message) {
     
     
     let embed = new MessageEmbed()
@@ -352,7 +352,7 @@ class Client {
     
   }
   
-  async pause(message) {
+  pause: async function(message) {
     
     const { channel } = message.member.voice.channel
    let embed = new MessageEmbed()
@@ -386,7 +386,7 @@ class Client {
     
   }
   
-  async queue(message) {
+   queue: async function(message) {
     let embed = new MessageEmbed()
     .setColor(COLOR);
     const { channel } = message.member.voice.channel
@@ -418,7 +418,7 @@ class Client {
     
   }
   
-  async resume(message) {
+  resume: async function(message) {
     let embed = new MessageEmbed()
 .setColor(COLOR);
 
@@ -444,7 +444,7 @@ class Client {
     message.channel.send(embed)
   }
   
-  async skip(message) {
+  skip: async function(message) {
     
     let embed = new MessageEmbed()
 .setColor(COLOR);
@@ -508,7 +508,7 @@ vote.vote++
   }
   
   
-  async stop(message) {
+  stop: async function(message) {
     
     let embed = new MessageEmbed()
     .setColor(COLOR)
@@ -534,7 +534,7 @@ vote.vote++
     
   }
   
-  async volume(message, volume) {
+  volume: async function(message, volume) {
     
     let embed = new MessageEmbed()
     .setColor(COLOR);
