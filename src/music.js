@@ -8,7 +8,7 @@ const { QUEUE_LIMIT, COLOR } = require("../config.json");
 const ytdl = require("ytdl-core");
 const YoutubeAPI = require("simple-youtube-api");
 const youtube = new YoutubeAPI(this.key);
-const { play } = require("../system/music.js");
+const { pla } = require("../system/music.js");
 
 
   
@@ -139,7 +139,7 @@ class Client {
     if (!serverQueue) {
       try {
         queueConstruct.connection = await channel.join();
-        play(queueConstruct.songs[0], message);
+        pla(queueConstruct.songs[0], message);
       } catch (error) {
         console.error(`Could not join voice channel: ${error}`);
         this.queue.delete(message.guild.id);
