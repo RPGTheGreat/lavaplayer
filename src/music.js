@@ -158,7 +158,7 @@ class Client {
     
   }
   
-  drop: async function(message, number) {
+  async drop(message, number) {
     
     const embed = new MessageEmbed()
     .setColor(COLOR)
@@ -195,7 +195,7 @@ class Client {
     
   }
   
-  jump: async function(message, number) {
+  async jump(message, number) {
     
     let embed = new MessageEmbed()
     .setColor(COLOR)
@@ -244,7 +244,7 @@ class Client {
     
   }
   
-  loop: async function(message) {
+  async loop(message) {
     
     let embed = new MessageEmbed()
 .setColor(COLOR);
@@ -274,7 +274,7 @@ class Client {
     
   }
   
-  lyrics: async function(message, song) {
+  async lyrics(message, song) {
     
     const Genius = new (require("genius-lyrics")).Client("ZD_lLHBwRlRRfQvVLAnHKHksDHQv9W1wm1ZAByPaYo1o2NuAw6v9USBUI1vEssjq")
     
@@ -323,7 +323,7 @@ class Client {
     
   }
   
-  np: async function(message) {
+  async np(message) {
     
     
     let embed = new MessageEmbed()
@@ -352,7 +352,7 @@ class Client {
     
   }
   
-  pause: async function(message) {
+  async pause(message) {
     
     const { channel } = message.member.voice.channel
    let embed = new MessageEmbed()
@@ -386,7 +386,7 @@ class Client {
     
   }
   
-   queue: async function(message) {
+   async queue(message) {
     let embed = new MessageEmbed()
     .setColor(COLOR);
     const { channel } = message.member.voice.channel
@@ -418,7 +418,7 @@ class Client {
     
   }
   
-  resume: async function(message) {
+  async resume(message) {
     let embed = new MessageEmbed()
 .setColor(COLOR);
 
@@ -444,7 +444,7 @@ class Client {
     message.channel.send(embed)
   }
   
-  skip: async function(message) {
+  async skip(message) {
     
     let embed = new MessageEmbed()
 .setColor(COLOR);
@@ -508,7 +508,7 @@ vote.vote++
   }
   
   
-  stop: async function(message) {
+  async stop(message) {
     
     let embed = new MessageEmbed()
     .setColor(COLOR)
@@ -534,7 +534,7 @@ vote.vote++
     
   }
   
-  volume: async function(message, volume) {
+  async volume(message, volume) {
     
     let embed = new MessageEmbed()
     .setColor(COLOR);
