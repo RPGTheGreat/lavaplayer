@@ -14,14 +14,14 @@ const { pla } = require("../system/music.js");
   
 class Client {
   
-  join: async function (message) {
+  async join(message) {
   
   await message.member.voice.channel.join()
     return message.channel.send("Successfully joined")
 
 }
 
-   play: async function(message, songx) {
+   async play(message, songx) {
     
     const embed = new MessageEmbed()
     .setColor(COLOR)
