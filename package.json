@@ -1,6 +1,6 @@
 {
   "name": "lavaplayer",
-  "version": "1.2.0",
+  "version": "2.2.0",
   "description": "A very high quality package give you quality like Rythm, Groovy",
   "main": "index.js",
   "scripts": {
