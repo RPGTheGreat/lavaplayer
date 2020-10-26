@@ -14,11 +14,10 @@ if (typeof key !== "string") throw new Error("[YT_API_KEY] YT_API_KEY Must be a 
 	
 	
 
-const { MessageEmbed } = require("discord.js")
 
 const ms = require("ms")
 
-
+const Discord = require("discord.js")
 const { Util } = require("discord.js");
 const { QUEUE_LIMIT, COLOR } = require("../config.json");
 const ytdl = require("ytdl-core");
@@ -33,13 +32,14 @@ const { pla } = require("../system/music.js");
   async join(message) {
   
   await message.member.voice.channel.join()
+	 
     return message.channel.send("Successfully joined")
 
 }
 
    async play(message, songx) {
     
-    const embed = new MessageEmbed()
+    const embed = new Discord.MessageEmbed()
     .setColor(COLOR)
     
     if (!songx) {
@@ -176,7 +176,7 @@ const { pla } = require("../system/music.js");
   
   async drop(message, number) {
     
-    const embed = new MessageEmbed()
+    const embed = new Discord.MessageEmbed()
     .setColor(COLOR)
     
     const serverQueue = this.queue.get(message.guild.id)
@@ -213,7 +213,7 @@ const { pla } = require("../system/music.js");
   
   async jump(message, number) {
     
-    let embed = new MessageEmbed()
+    let embed = new Discord.MessageEmbed()
     .setColor(COLOR)
     
     const { channel } = message.member.voice.channel
