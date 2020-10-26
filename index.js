@@ -1,3 +1,3 @@
 module.exports = {
-Client: require("./src/client")
+Client: require("./src/music")
 }
