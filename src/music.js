@@ -49,7 +49,7 @@ if (typeof key !== "string") throw new Error("[YT_API_KEY] YT_API_KEY Must be a 
       return message.channel.send(embed);
     }
 
-    const { channel } = message,member.voice.channel
+    const { channel } = message.member.voice.channel
         
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
