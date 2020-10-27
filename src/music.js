@@ -1,3 +1,11 @@
+const ms = require("ms")
+
+const { MessageEmbed } = require("discord.js")
+const { Util } = require("discord.js");
+const { QUEUE_LIMIT, COLOR } = require("../config.json");
+const ytdl = require("ytdl-core");
+const YoutubeAPI = require("simple-youtube-api");
+const { pla } = require("../system/music.js");
 
 	class Client {
 	
@@ -10,36 +18,28 @@ if (typeof key !== "string") throw new Error("[YT_API_KEY] YT_API_KEY Must be a 
     
 		this.queue = new Map();
     this.vote = new Map();
-
 	
-	
-
-
-const ms = require("ms")
-
-const Discord = require("discord.js")
-const { Util } = require("discord.js");
-const { QUEUE_LIMIT, COLOR } = require("../config.json");
-const ytdl = require("ytdl-core");
-const YoutubeAPI = require("simple-youtube-api");
-const youtube = new YoutubeAPI(this.key);
-const { pla } = require("../system/music.js");
-
 }
   
 
   
   async join(message) {
   
+	 let embed = new MessageEmbed()
+	 .setTitle("ERROR 404")
+	 .setDescription("**You need to join voice channel first**")
+	 .setColor(COLOR)
+	  if(!message.member.voice.channel) return message.channel.send(embed)
+					
   await message.member.voice.channel.join()
 	 
-    return message.channel.send("Successfully joined")
+    await message.react("👍")
 
 }
 
    async play(message, songx) {
-    
-    const embed = new Discord.MessageEmbed()
+    const youtube = new YoutubeAPI(this.key)
+    const embed = new MessageEmbed()
     .setColor(COLOR)
     
     if (!songx) {
@@ -49,7 +49,7 @@ const { pla } = require("../system/music.js");
       return message.channel.send(embed);
     }
 
-    const { channel } = message.voice
+    const { channel } = message,member.voice.channel
         
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
@@ -176,7 +176,7 @@ const { pla } = require("../system/music.js");
   
   async drop(message, number) {
     
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
     .setColor(COLOR)
     
     const serverQueue = this.queue.get(message.guild.id)
@@ -213,7 +213,7 @@ const { pla } = require("../system/music.js");
   
   async jump(message, number) {
     
-    let embed = new Discord.MessageEmbed()
+    let embed = new MessageEmbed()
     .setColor(COLOR)
     
     const { channel } = message.member.voice.channel
