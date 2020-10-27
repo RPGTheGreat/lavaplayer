@@ -42,21 +42,28 @@ if (typeof key !== "string") throw new Error("[YT_API_KEY] YT_API_KEY Must be a 
     const embed = new MessageEmbed()
     .setColor(COLOR)
     
+    let embedx = new MessageEmbed()
+    .setTitle("ERROR 404")
+    .setColor("RED")
+    .setDescription("**You need to join the voice channel first**")
+    
+    if(!message.member.voice.channel) return message.channel.send(embedx)
+    
     if (!songx) {
       //IF AUTHOR DIDENT GIVE URL OR NAME
       embed.setTitle("ERROR 404")
-      embed.setDescription("**Please give a song name or url")
+      embed.setDescription("**Please give a song name or url**")
       return message.channel.send(embed);
     }
 
-    const { channel } = message.member.voice.channel
+    /*const { channel } = message.member.voice.channel
         
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
       embed.setTitle("ERROR 404")
       embed.setDescription("**You need to join the voice channel first**")
       return message.channel.send(embed);
-    }
+    }*/
 
     //WE WILL ADD PERMS ERROR LATER :(
 
