@@ -1,6 +1,6 @@
 # Lavaplayer
 
-#### A very high quality music package give best quality music
+**A very high quality music package give best quality music**
 
 # Requirements
 
@@ -8,9 +8,9 @@
 
 **Node v12**
 
-# Disclaimer 
+# Note
 
-**Message is a object of every function so message is required**
+**This package only for discord.js not for eris and other library's**
 
 # Install
 
@@ -21,14 +21,24 @@
 ```js
 
 const bot = require("lavaplayer") // required module
-const Discord = require("discord.js")
+const Discord = require("discord.js") //required module
 const client = new Discord.Client()
-const music = new bot.Client("yt-api-key") //you're yt api key
+
 
 client.on("message", async message => {
 
+const music = new bot.Client(client, {
+  guild: message.guild.id, //the guild where players connect
+  textChannel: message.channel.id, //the channel where player messages send
+  voiceChannel: message.member.voice.channel.id, //the channel that where player join and connect
+  host: "localhost", //default is lavalink.something.host
+  port: 80, //default port 80
+  password: "youshallnotpass" //default password youshallnotpass
+})
+  
 if(message.content === "!play") {
-await music.play(message, "Im on my way") // bot join the voice channel and play song 
+ music.play("Im on my way", message.author) // bot join the voice channel and play song 
+  return message.channel.send("Im now playing I'm on my way")
 }
 });
 client.login("token")
@@ -36,34 +46,46 @@ client.login("token")
 
 # Features
 
-**Best quality music**
+- Best quality music
 
-**Arguments are already customized**
+- Arguments are already customized or non-customized
 
-**Easy methods**
+- Easy methods
 
-**No rate limit**
+ - No rate limit
+ 
+ - No api key required
 
-# Documantion
+# Functions
 
 | Methods       | Type           | Description |
 | ------------- |:-------------:|:--------------:|
-| play(message, song)     | Object & String | Play a song |
-| pause(message)      | Object | Pause the current song |
-| resume(message) | Object | Resume the pause song |
-| volume(message, volume) | Object & String | Set the volume of songs |
-| skip(message) | Object | Skip a song |
-| stop(message) | Object | Stop all songs |
-| join(message) | Object | Join a voice channel |
-| queue(message) | Object | View queue songs|
-| np(message) | Object| See now playing song |
-| drop(message, number) | Object & String | Drop a song from queue |
-| jump(message, number) | Object & String | Jump to a song |
-| loop(message) | Object | Loop the songs |
-| lyrics(message, song) | Object & String| Get the lyrics of song |
+| play(song, author)     | String | Play a track |
+| pause()      | Function | Pause the current track |
+| resume() | Function | Resume the pause track |
+| volume(volume) | Function | Set the volume of tracks |
+| skip() | Function | Skip a track |
+| destroy() | Function | Stop all tracks |
+| join() | Function | Join a voice channel |
+| queue(args) | Function | View queue tracks | 
+| np() | Function | See now playing track |
+| repeat() | Function | Repeat queue or track |
+| bassboost() | Function | Bassboost tracks |
 
-# Support
+# Events
 
-**If you have bug or issues report here [Github](https://github.com/RPGTheGreat/lavaplayer)**
+`error` - Emit error when player get error
 
-**If you need to support join our support server [Discord](https://discord.gg/yqAGXbz)**
+`debug` - Emit debugging
+
+`ready` - Emit ready whenever player is ready
+
+`reconnect` - Emit reconnect when player try to reconnect
+
+`destroy` - Emit destroy when player get destroyed
+
+# Links
+
+- [Github](https://github.com/RPGTheGreat/lavaplayer)
+
+- [Discord](https://discord.gg/yqAGXbz)

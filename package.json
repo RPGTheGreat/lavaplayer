@@ -1,7 +1,7 @@
 {
   "name": "lavaplayer",
-  "version": "2.2.0",
-  "description": "A very high quality package give you quality like Rythm, Groovy",
+  "version": "4.0.0",
+  "description": "A very high quality lavalink client",
   "main": "index.js",
   "scripts": {
     "test": "node index.js",
@@ -13,7 +13,7 @@
   },
   "keywords": [
     "music",
-    "lava",
+    "lavalink",
     "quality"
   ],
   "engines": {
@@ -26,13 +26,7 @@
   },
   "homepage": "https://github.com/RPGTheGreat/lavaplayer#readme",
   "dependencies": {
-    "discord.js": "^12.3.1",
-    "ytdl-core": "^3.2.2",
-    "ytdl-core-discord": "^1.2.3",
-    "@discordjs/opus": "^0.3.2",
-    "genius-lyrics": "^3.0.0",
-    "moment": "^2.27.0",
-    "ms": "^2.1.2",
-    "simple-youtube-api": "https://github.com/RPGTheGreat/simple-youtube-api"
+    "erela.js": "^2.3.0",
+    "events": "^3.2.0"
   }
 }
