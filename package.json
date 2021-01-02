@@ -1,6 +1,6 @@
-{
+ {
   "name": "lavaplayer",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "A very high quality lavalink client",
   "main": "index.js",
   "scripts": {

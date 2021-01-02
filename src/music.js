@@ -216,3 +216,5 @@ this.client.on("ready", () => {
   }
   
 }
+
+module.exports = Client
