@@ -4,7 +4,7 @@ const EventEmitter = require("events")
 class Client extends EventEmitter {
   
   constructor(client, options={}) {
-   
+   super(client, options) 
     this.voice = options.voiceChannel
     
     this.textChannel = options.textChannel
